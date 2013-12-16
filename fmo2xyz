@@ -1,0 +1,23 @@
+#!/usr/bin/python
+import sys
+
+from utils import write_fragments
+from utils import write_layers
+
+for arg in sys.argv:
+    if "-f" in arg:
+        write_fragments(sys.argv[2])
+        exit(0)
+    elif "-l" in arg:
+        write_layers(sys.argv[2])
+        exit(0)
+
+
+
+print "Usage: ./fmo2xyz --arg filename"
+print 
+print "Arguments:"
+print "-f -- Write fragments."
+print "-l -- Write layers."
+print 
+print "E.g. ./fmo2xyz -f test.inp"
